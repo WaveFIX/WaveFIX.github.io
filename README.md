@@ -1,2 +1,2 @@
-# FIX
-company dedicated to computer and laptop repairs we help people with digital problems
+# FIX COMPANY
+company dedicated to computer and laptop repairs we help people with digital problems and creator of web sites
