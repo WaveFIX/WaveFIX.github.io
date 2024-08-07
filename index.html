@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaveFIX</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="logo">
+            <h1 id="companyName">WaveFIX</h1>
+        </div>
+        <div class="profile-icon" onclick="openLogin()">&#128100;</div>
+    </header>
+    <nav id="menu" class="hidden">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Acerca de</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="catalogo">
+            <h2>Catálogo</h2>
+            <div class="producto">
+                <img src="imagen1.jpg" alt="Producto 1">
+                <div class="descripcion">
+                    <h3>Producto 1</h3>
+                    <p>Descripción del producto 1.</p>
+                    <p>Precio: $10.00</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+            <!-- Repite el bloque anterior para más productos -->
+        </section>
+        <section id="contacto">
+            <h2>Contacta con Nosotros</h2>
+            <form id="contactForm" onsubmit="return validateForm()">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <section id="comentarios">
+            <h2>Comentarios</h2>
+            <form id="comentariosForm" onsubmit="return submitComment()">
+                <label for="estrellas">Valoración:</label>
+                <select id="estrellas" name="estrellas" required>
+                    <option value="1">1 estrella</option>
+                    <option value="2">2 estrellas</option>
+                    <option value="3">3 estrellas</option>
+                    <option value="4">4 estrellas</option>
+                    <option value="5">5 estrellas</option>
+                </select>
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" name="comentario" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="comentariosList">
+                <!-- Los comentarios se agregarán aquí -->
+            </div>
+        </section>
+    </main>
+    <div id="registerPopup" class="popup">
+        <form id="registerForm" onsubmit="return submitRegister()">
+            <h2>Registrarse</h2>
+            <label for="regNombre">Nombre:</label>
+            <input type="text" id="regNombre" name="regNombre" required>
+            <label for="regEmail">Email:</label>
+            <input type="email" id="regEmail" name="regEmail" required>
+            <label for="regPassword">Contraseña:</label>
+            <input type="password" id="regPassword" name="regPassword" required>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+    <div id="loginPopup" class="popup">
+        <form id="loginForm" onsubmit="return submitLogin()">
+            <h2>Iniciar Sesión</h2>
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" name="loginEmail" required>
+            <label for="loginPassword">Contraseña:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required>
+            <button type="submit">Iniciar Sesión</button>
+            <div class="login-options">
+                <button type="button" onclick="openRegister()">¿No tienes cuenta? Regístrate</button>
+                <button type="button">¿Olvidaste tu contraseña?</button>
+            </div>
+        </form>
+    </div>
+    <div id="cookiesPopup" class="popup">
+        <div class="content">
+            <h2>Política de Cookies</h2>
+            <p>Este sitio web utiliza cookies para mejorar la experiencia del usuario. Al continuar navegando en este sitio, aceptas el uso de cookies.</p>
+            <button onclick="acceptCookies()">Aceptar</button>
+        </div>
+    </div>
+    <script src="assets/app.js"></script>
+</body>
+</html>
