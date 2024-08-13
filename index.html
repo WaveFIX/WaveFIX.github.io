@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaveFIX</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" type="image/png" href="images/icon.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="images/icon.png">
+</head>
+<body onload="showCookiesPopup()">
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="logo">
+            <h1 id="companyName">WaveFIX</h1>
+        </div>
+        <div class="profile-icon" onclick="openLogin()">&#128100;</div>
+    </header>
+    <nav id="menu" class="hidden">
+        <span class="close" onclick="toggleMenu()">&times;</span>
+        <ul>
+            <li><a href="#catalogo">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#redes-sociales">Redes Sociales</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="catalogo">
+            <h2>Nuestros Productos</h2>
+            <div class="producto">
+                <img src="images/web.jpg" alt="Web Site">
+                <div class="descripcion">
+                    <h3>Web Site</h3>
+                    <p>Una web creada al gusto del cliente. El tiempo estimado que puede tardar en hacerse es de entre 1 y 5 días.</p>
+                    <p>Precio: $20.00</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+
+            <div class="producto">
+                <img src="imagen1.jpg" alt="Producto 1">
+                <div class="descripcion">
+                    <h3>Producto 1</h3>
+                    <p>Descripción del producto 1.</p>
+                    <p>Precio: $25.00</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+
+            <!-- Añade más productos aquí -->
+        </section>
+
+        <section id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <p>Servicios como developed creador de webs sites arreglos de problemas informaticos</p>
+            <ul>
+                <li>Diseño y desarrollo web personalizado.</li>
+                <li>Solución de problemas informáticos.</li>
+                <li>Asesoramiento técnico remoto.</li>
+                <li>Integración de pagos en línea y pasarelas de pago.</li>
+                <li>Consultoría en ciberseguridad para proteger tu sitio web.</li>
+            </ul>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacta con Nosotros</h2>
+            <form id="contactForm" onsubmit="return validateForm()">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="comentarios">
+            <h2>Comentarios</h2>
+            <form id="comentariosForm" onsubmit="return submitComment()">
+                <label for="estrellas">Valoración:</label>
+                <div id="star-rating">
+                    <input type="radio" id="estrella1" name="estrellas" value="1" required>
+                    <label for="estrella1">&#9733;</label>
+                    <input type="radio" id="estrella2" name="estrellas" value="2">
+                    <label for="estrella2">&#9733;</label>
+                    <input type="radio" id="estrella3" name="estrellas" value="3">
+                    <label for="estrella3">&#9733;</label>
+                    <input type="radio" id="estrella4" name="estrellas" value="4">
+                    <label for="estrella4">&#9733;</label>
+                    <input type="radio" id="estrella5" name="estrellas" value="5">
+                    <label for="estrella5">&#9733;</label>
+                </div>
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" name="comentario" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+
+        <section id="acerca-de">
+            <h2>Acerca de Nosotros</h2>
+            <p>Web creada con la finalidad de crear paginas webs a clientes a parte de resolver problemas complejos y tecnicos.</p>
+            <ul>
+                <li>Nos comprometemos con la calidad de nuestros productos</li>
+                <li>Atención al cliente 24/7.</li>
+                <li>Soporte técnico dedicado.</li>
+            </ul>
+        </section>
+
+
+        
+        <section id="redes-sociales">
+            <h2>Redes Sociales</h2>
+            <div class="redes">
+                <div class="red">
+                    <img src="images/twitter-logo.jpg" alt="Twitter">
+                    <button class="btn-social" onclick="window.open('https://twitter.com', '_blank')">X</button>
+                </div>
+                <div class="red">
+                    <img src="images/instagram-logo.png" alt="Instagram">
+                    <button class="btn-social" onclick="window.open('https://instagram.com )">Instagram</button>
+                </div>
+                <div class="red">
+                    <img src="images/logo-linkedin.png" alt="LinkedIn">
+                    <button class="btn-social" onclick="window.open(instagram.com)">LinkedIn</button>
+                </div>
+            </div>
+        </section>
+        
+
+    <style>
+            .btn-social {
+                background-color: #fff;
+                color: black; /* Cambié el color a negro para que no sea invisible */
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                font-size: 1rem;
+                border-radius: 25px;
+                margin-top: 10px;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+        
+            .btn-social:hover {
+                background-color: #000;
+                transform: translateY(-3px) scale(1.05);
+            }
+        
+            .red {
+                text-align: center;
+                margin: 20px;
+            }
+        
+            .red img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-bottom: 10px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+        
+            .red img:hover {
+                transform: scale(1.2);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+
+            /* Z-index para asegurar que el formulario de registro esté detrás del de inicio de sesión */
+            #registerPopup {
+                z-index: 999;
+            }
+
+            #loginPopup {
+                z-index: 1000;
+            }
+        </style>
+
+    <footer>
+        <p>&copy; 2024 WaveFIX. Todos los derechos reservados.</p>
+        <div class="redes-sociales">
+            <a href="https://www.twitter.com/WaveFIX" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/WaveFIX" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/WaveFIX" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
+    <div id="registerPopup" class="popup">
+        <span class="close" onclick="closePopup('registerPopup')">&times;</span>
+        <form id="registerForm" onsubmit="return submitRegister()">
+            <h2>Registrarse</h2>
+            <label for="regNombre">Nombre:</label>
+            <input type="text" id="regNombre" name="regNombre" required>
+            <label for="regEmail">Email:</label>
+            <input type="email" id="regEmail" name="regEmail" required>
+            <label for="regPassword">Contraseña:</label>
+            <input type="password" id="regPassword" name="regPassword" required>
+            <label for="regConfirmPassword">Confirmar Contraseña:</label>
+            <input type="password" id="regConfirmPassword" name="regConfirmPassword" required>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+
+    <div id="loginPopup" class="popup">
+        <span class="close" onclick="closePopup('loginPopup')">&times;</span>
+        <form id="loginForm" onsubmit="return submitLogin()">
+            <h2>Iniciar Sesión</h2>
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" name="loginEmail" required>
+            <label for="loginPassword">Contraseña:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required>
+            <button type="submit">Iniciar Sesión</button>
+            <div class="login-options">
+                <button type="button" onclick="openRegister()">¿No tienes cuenta? Regístrate</button>
+                <button type="button" onclick="forgotPassword()">¿Olvidaste tu contraseña?</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="cookiesPopup" class="popup">
+        <span class="close" onclick="closePopup('cookiesPopup')">&times;</span>
+        <div class="content">
+            <h2>Política de Cookies</h2>
+            <p>Este sitio web utiliza cookies para mejorar la experiencia del usuario. Al continuar navegando en este sitio, aceptas el uso de cookies.</p>
+            <button type="button" onclick="openPolicy()">Nuestra Política</button>
+            <button onclick="acceptCookies()">Aceptar</button>
+        </div>
+    </div>
+
+    <div id="policyPopup" class="popup">
+        <span class="close" onclick="closePopup('policyPopup')">&times;</span>
+        <div class="content">
+            <h2>Política de Privacidad</h2>
+            <p>En WaveFIX, valoramos tu privacidad. Todos los datos personales recopilados serán utilizados únicamente para mejorar la experiencia del usuario y no serán compartidos con terceros sin tu consentimiento.</p>
+            <button onclick="closePopup('policyPopup')">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="assets/app.js"></script>
+    <script>
+        // Mostrar el pop-up de cookies al cargar la página
+        function showCookiesPopup() {
+            document.getElementById('cookiesPopup').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
