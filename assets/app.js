@@ -1,94 +1,105 @@
+// Función para alternar el menú
 function toggleMenu() {
     const menu = document.getElementById('menu');
-    if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-        menu.classList.add('show');
+    menu.classList.toggle('hidden');
+    if (!menu.classList.contains('hidden')) {
+        menu.style.display = 'block';
     } else {
-        menu.classList.remove('show');
-        menu.classList.add('hidden');
+        menu.style.display = 'none';
     }
 }
 
-function openRegister() {
-    const registerPopup = document.getElementById('registerPopup');
-    registerPopup.classList.add('show');
-}
-
-function closeRegister() {
-    const registerPopup = document.getElementById('registerPopup');
-    registerPopup.classList.remove('show');
-}
-
+// Función para abrir el pop-up de login
 function openLogin() {
     const loginPopup = document.getElementById('loginPopup');
-    loginPopup.classList.add('show');
+    loginPopup.style.display = 'block';
 }
 
-function closeLogin() {
-    const loginPopup = document.getElementById('loginPopup');
-    loginPopup.classList.remove('show');
+// Función para abrir el pop-up de registro
+function openRegister() {
+    const registerPopup = document.getElementById('registerPopup');
+    registerPopup.style.display = 'block';
 }
 
-function submitRegister(event) {
-    event.preventDefault();
-    closeRegister();
-    openLogin();
-    return false;
+// Función para cerrar los pop-ups
+function closePopup(popupId) {
+    const popup = document.getElementById(popupId);
+    popup.style.display = 'none';
 }
 
-function submitLogin(event) {
-    event.preventDefault();
-    closeLogin();
-    alert('Inicio de sesión exitoso');
-    return false;
-}
-
-function validateForm(event) {
-    const form = document.getElementById('contactForm');
-    const nombre = form.nombre.value;
-    const email = form.email.value;
-    const mensaje = form.mensaje.value;
-
-    if (!nombre || !email || !mensaje) {
-        alert('Por favor, rellene todos los campos.');
-        return false;
-    }
-
-    alert('Formulario enviado correctamente.');
+// Función para validar el formulario de contacto
+function validateForm() {
+    // Validación del formulario de contacto
     return true;
 }
 
+// Función para enviar el formulario de comentarios
 function submitComment() {
-    const form = document.getElementById('comentariosForm');
-    const estrellas = form.estrellas.value;
-    const comentario = form.comentario.value;
+    const estrellas = document.querySelector('input[name="estrellas"]:checked').value;
+    const comentario = document.getElementById('comentario').value;
 
-    if (!estrellas || !comentario) {
-        alert('Por favor, rellene todos los campos.');
-        return false;
-    }
-
+    // Añadir el comentario al listado
     const comentariosList = document.getElementById('comentariosList');
-    const comentarioDiv = document.createElement('div');
-    comentarioDiv.classList.add('comentario-item');
-    comentarioDiv.innerHTML = `
-        <p><strong>Valoración:</strong> ${estrellas} estrellas</p>
-        <p><strong>Comentario:</strong> ${comentario}</p>
+    const newComment = document.createElement('div');
+    newComment.className = 'comentario';
+    newComment.innerHTML = `
+        <p><strong>${estrellas} estrellas</strong></p>
+        <p>${comentario}</p>
     `;
-    comentariosList.appendChild(comentarioDiv);
+    comentariosList.appendChild(newComment);
 
-    form.reset();
-    return false;
+    // Limpiar el formulario
+    document.getElementById('comentariosForm').reset();
+
+    return false; // Prevenir recarga de la página
 }
 
+// Función para enviar el formulario de registro
+function submitRegister() {
+    // Registro del usuario
+    return false; // Prevenir recarga de la página
+}
+
+// Función para enviar el formulario de login
+function submitLogin() {
+    // Login del usuario
+    return false; // Prevenir recarga de la página
+}
+
+// Función para aceptar cookies
 function acceptCookies() {
     const cookiesPopup = document.getElementById('cookiesPopup');
-    cookiesPopup.classList.remove('show');
+    cookiesPopup.style.display = 'none';
 }
 
-window.onload = function() {
-    setTimeout(function() {
-        const cookiesPopup = document.getElementById('cookiesPopup');
-        cookiesPopup.classList.add('show');
-    }, 5000);
-};
+// Función para abrir la política de cookies
+function openPolicy() {
+    window.location.href = 'policy.html'; // Redirigir a la política de cookies
+}
+
+// Función para filtrar comentarios
+function filterComments(minStars, maxStars) {
+    const comentariosList = document.getElementById('comentariosList');
+    comentariosList.innerHTML = ''; // Limpiar comentarios existentes
+
+    // Comentarios de ejemplo (pueden ser reemplazados por comentarios reales)
+    const comentarios = [
+        { estrellas: 5, texto: 'Excelente servicio.' },
+        { estrellas: 4, texto: 'Muy buen producto.' },
+        { estrellas: 3, texto: 'Aceptable, pero puede mejorar.' },
+        { estrellas: 2, texto: 'No cumple con las expectativas.' },
+        { estrellas: 1, texto: 'Muy malo, no lo recomiendo.' }
+    ];
+
+    // Filtrar y mostrar comentarios
+    const filteredComments = comentarios.filter(c => c.estrellas >= minStars && c.estrellas <= maxStars);
+    filteredComments.forEach(c => {
+        const newComment = document.createElement('div');
+        newComment.className = 'comentario';
+        newComment.innerHTML = `
+            <p><strong>${c.estrellas} estrellas</strong></p>
+            <p>${c.texto}</p>
+        `;
+        comentariosList.appendChild(newComment);
+    });
+}
