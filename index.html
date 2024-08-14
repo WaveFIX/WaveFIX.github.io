@@ -60,12 +60,27 @@
                 <li>Asesoramiento técnico remoto.</li>
                 <li>Integración de pagos en línea y pasarelas de pago.</li>
                 <li>Consultoría en ciberseguridad para proteger tu sitio web.</li>
-
-                <img src="images/header.png"
-
-
             </ul>
+            <img src="images/header.png" alt="Descripción de la imagen" class="servicio-imagen">
         </section>
+        
+        <style>
+            #servicios {
+                text-align: center; 
+            }
+        
+            .servicio-imagen {
+                max-width: 50%; 
+                height: auto; 
+            }
+        
+            @media (max-width: 600px) {
+                .servicio-imagen {
+                    width: 100%; 
+                }
+            }
+        </style>
+
 
         <section id="contacto">
             <h2>Contacta con Nosotros</h2>
@@ -135,7 +150,7 @@
     <style>
             .btn-social {
                 background-color: #fff;
-                color: black; /* Cambié el color a negro para que no sea invisible */
+                color: black; 
                 border: none;
                 padding: 10px 20px;
                 cursor: pointer;
@@ -169,7 +184,7 @@
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             }
 
-            /* Z-index para asegurar que el formulario de registro esté detrás del de inicio de sesión */
+            
             #registerPopup {
                 z-index: 999;
             }
@@ -241,7 +256,7 @@
 
     <script src="assets/app.js"></script>
     <script>
-        // Mostrar el pop-up de cookies al cargar la página
+        
         function showCookiesPopup() {
             document.getElementById('cookiesPopup').style.display = 'block';
         }
