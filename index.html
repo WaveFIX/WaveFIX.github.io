@@ -34,7 +34,7 @@
                     <h3>Web Site</h3>
                     <p>Una web creada al gusto del cliente. El tiempo estimado que puede tardar en hacerse es de entre 1 y 5 días. sevicio de trato al cliente 24/7</p>
                     <p>Precio: $20.00</p>
-                    <button class="btn-comprar">Comprar</button>
+                    <a href="pago/pago.html" class="btn-comprar">Comprar</a>
                 </div>
             </div>
 
@@ -60,6 +60,10 @@
                 <li>Asesoramiento técnico remoto.</li>
                 <li>Integración de pagos en línea y pasarelas de pago.</li>
                 <li>Consultoría en ciberseguridad para proteger tu sitio web.</li>
+
+                <img src="images/header.png"
+
+
             </ul>
         </section>
 
@@ -81,16 +85,16 @@
             <form id="comentariosForm" onsubmit="return submitComment()">
                 <label for="estrellas">Valoración:</label>
                 <div id="star-rating">
-                    <input type="radio" id="estrella5" name="estrellas" value="5" required>
-                    <label for="estrella5">&#9733;</label>
-                    <input type="radio" id="estrella4" name="estrellas" value="4">
-                    <label for="estrella4">&#9733;</label>
-                    <input type="radio" id="estrella3" name="estrellas" value="3">
-                    <label for="estrella3">&#9733;</label>
+                    <input type="radio" id="estrella1" name="estrellas" value="1" required>
+                    <label for="estrella1">&#9733;</label>
                     <input type="radio" id="estrella2" name="estrellas" value="2">
                     <label for="estrella2">&#9733;</label>
-                    <input type="radio" id="estrella1" name="estrellas" value="1">
-                    <label for="estrella1">&#9733;</label>
+                    <input type="radio" id="estrella3" name="estrellas" value="3">
+                    <label for="estrella3">&#9733;</label>
+                    <input type="radio" id="estrella4" name="estrellas" value="4">
+                    <label for="estrella4">&#9733;</label>
+                    <input type="radio" id="estrella5" name="estrellas" value="5">
+                    <label for="estrella5">&#9733;</label>
                 </div>
                 <label for="comentario">Comentario:</label>
                 <textarea id="comentario" name="comentario" required></textarea>
@@ -131,7 +135,7 @@
     <style>
             .btn-social {
                 background-color: #fff;
-                color: green; 
+                color: black; /* Cambié el color a negro para que no sea invisible */
                 border: none;
                 padding: 10px 20px;
                 cursor: pointer;
@@ -165,7 +169,7 @@
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             }
 
-            
+            /* Z-index para asegurar que el formulario de registro esté detrás del de inicio de sesión */
             #registerPopup {
                 z-index: 999;
             }
@@ -237,7 +241,7 @@
 
     <script src="assets/app.js"></script>
     <script>
-        
+        // Mostrar el pop-up de cookies al cargar la página
         function showCookiesPopup() {
             document.getElementById('cookiesPopup').style.display = 'block';
         }
