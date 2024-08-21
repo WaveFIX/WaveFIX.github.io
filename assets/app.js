@@ -81,7 +81,14 @@ function filterComments(minStars, maxStars) {
     const comentariosList = document.getElementById('comentariosList');
     comentariosList.innerHTML = ''; // Limpiar comentarios existentes
 
-   
+    // Comentarios de ejemplo (pueden ser reemplazados por comentarios reales)
+    const comentarios = [
+        { estrellas: 5, texto: 'Excelente servicio.' },
+        { estrellas: 4, texto: 'Muy buen producto.' },
+        { estrellas: 3, texto: 'Aceptable, pero puede mejorar.' },
+        { estrellas: 2, texto: 'No cumple con las expectativas.' },
+        { estrellas: 1, texto: 'Muy malo, no lo recomiendo.' }
+    ];
 
     // Filtrar y mostrar comentarios
     const filteredComments = comentarios.filter(c => c.estrellas >= minStars && c.estrellas <= maxStars);
@@ -94,4 +101,4 @@ function filterComments(minStars, maxStars) {
         ;
         comentariosList.appendChild(newComment);
     });
-}
+    }
