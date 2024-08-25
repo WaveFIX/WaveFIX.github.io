@@ -3,274 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaveFIX</title>
+    <title>Wavefix</title>
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="icon" type="image/png" href="images/icon.png"/>
-    <link rel="shortcut icon" type="image/x-icon" href="images/icon.png">
 </head>
-<body onload="showCookiesPopup()">
-    <header>
-        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-        <div class="logo">
-            <h1 id="companyName">WaveFIX</h1>
+<body>
+
+    <!-- Popup de Cookies -->
+    <div id="cookies-popup" class="cookies-popup">
+        <div class="cookies-popup-content">
+            <p>Este sitio web utiliza cookies para mejorar tu experiencia. <button id="accept-cookies">Aceptar</button></p>
         </div>
-        <div class="profile-icon" onclick="openLogin()">&#128100;</div>
-    </header>
-    <nav id="menu" class="hidden">
-        <span class="close" onclick="toggleMenu()">&times;</span>
-        <ul>
-            <li><a href="#catalogo">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><a href="#redes-sociales">Redes Sociales</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="catalogo">
-            <h2>Nuestros Productos</h2>
-            <div class="producto">
-                <img src="images/web.jpg" alt="Web Site">
-                <div class="descripcion">
-                    <h3>Web Site</h3>
-                    <p>Una web creada al gusto del cliente. El tiempo estimado que puede tardar en hacerse es de entre 1 y 5 días. sevicio de trato al cliente 24/7</p>
-                    <p>Precio: $20.00</p>
-                    <a href="pago/pago.html" class="btn-comprar">Comprar</a>
-                </div>
+    </div>
+
+    <!-- Barra de navegación -->
+     <header>
+    <div class="login-cart">
+        <button id="login-btn">
+            <span>👤 Iniciar sesión</span>
+            </button>
             </div>
-
-            <div class="producto">
-                <img src="imagen1.jpg" alt="Optimizacion de forma remota">
-                <div class="descripcion">
-                    <h3>Optimizacion de forma remota.</h3>
-                    <p>Optimacion de ordenador o portatil de forma remota para más informacion hablar con la empresa cuandfo el cliente pueda se le diran las indicaciones para porder hacerlo le garantizamos seguridad y privacidad a el contenido de el pc/portatil de el cliente.</p>
-                    <p>Precio: $25.00</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
- <div class="producto">
-                <img src="auditoria.png" alt="Auditoría de ciberseguridad">
-                <div class="descripcion">
-                    <h3>Auditoría de ciberseguridad.</h3>
-                    <p>Auditoría de ciberseguridad para empresas con sitios web, incluyendo la recopilación de informes sobre la información obtenida para corregir fallos de seguridas en formularios fallos en el codigo de la web informacion expuesta y demas esta informacion sera privada del cliente una vesz se termine la auditoria la informacion no se volvera a utilizar</p>
-                    <p>Precio: $30.00</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-            
-
-            <!-- Añade más productos aquí -->
-        </section>
-
-        <section id="servicios">
-            <h2>Nuestros Servicios</h2>
-            <p>Servicios como developed creador de webs sites arreglos de problemas informaticos</p>
-            <ul>
-                <li>Diseño y desarrollo web personalizado.</li>
-                <li>Solución de problemas informáticos.</li>
-                <li>Asesoramiento técnico remoto.</li>
-                <li>Integración de pagos en línea y pasarelas de pago.</li>
-                <li>Consultoría en ciberseguridad para proteger tu sitio web.</li>
-            </ul>
-            <img src="images/header.png" alt="Descripción de la imagen" class="servicio-imagen">
-        </section>
-        
-        <style>
-            #servicios {
-                text-align: center; 
-            }
-        
-            .servicio-imagen {
-                max-width: 50%; 
-                height: auto; 
-            }
-        
-            @media (max-width: 600px) {
-                .servicio-imagen {
-                    width: 100%; 
-                }
-            }
-        </style>
+        </header>
 
 
-        <section id="contacto">
-            <h2>Contacta con Nosotros</h2>
-            <form id="contactForm" onsubmit="return validateForm()">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+    
 
-        <section id="comentarios">
-            <h2>Comentarios</h2>
-            <form id="comentariosForm" onsubmit="return submitComment()">
-                <label for="estrellas">Valoración:</label>
-                <div id="star-rating">
-                    <input type="radio" id="estrella1" name="estrellas" value="1" required>
-                    <label for="estrella1">&#9733;</label>
-                    <input type="radio" id="estrella2" name="estrellas" value="2">
-                    <label for="estrella2">&#9733;</label>
-                    <input type="radio" id="estrella3" name="estrellas" value="3">
-                    <label for="estrella3">&#9733;</label>
-                    <input type="radio" id="estrella4" name="estrellas" value="4">
-                    <label for="estrella4">&#9733;</label>
-                    <input type="radio" id="estrella5" name="estrellas" value="5">
-                    <label for="estrella5">&#9733;</label>
-                </div>
-                <label for="comentario">Comentario:</label>
-                <textarea id="comentario" name="comentario" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+    <!-- Banner de Descuento -->
+    <div class="discount-banner">
+        ¡10% de descuento en todos los productos! <span>Oferta limitada</span>
+    </div>
 
-        <section id="acerca-de">
-            <h2>Acerca de Nosotros</h2>
-            <p>Web creada con la finalidad de crear paginas webs a clientes a parte de resolver problemas complejos y tecnicos.</p>
-            <ul>
-                <li>Nos comprometemos con la calidad de nuestros productos</li>
-                <li>Atención al cliente 24/7.</li>
-                <li>Soporte técnico dedicado.</li>
-            </ul>
-        </section>
+    <!-- Sección principal -->
+    <section class="hero">
+        <div class="hero-title">
+            <h2>Bienvenido a Wavefix empresa de ciberseguridad</h2>
+        </div>
+    </section>
 
+    <!-- Sección "Quiénes Somos" -->
+    <section id="about">
+        <h2>Quiénes Somos</h2>
+        <p>Somos una empresa dedicada a hacer auditorias de ciberseguridad prometer seguridad a equipos y webs de clientes
+            con informes detallados y privados a cada cliente tambien trabajamos como creadores de websites con todos los
+            detalles que el cliente nos proporcione, tambien optimizamos de forma remota equimos que esten limitados y los llevamos al siguiente nivel.
+        </p>
+    </section>
 
-        
-        <section id="redes-sociales">
-            <h2>Redes Sociales</h2>
-            <div class="redes">
-                <div class="red">
-                    <img src="images/twitter-logo.jpg" alt="Twitter">
-                    <button class="btn-social" onclick="window.open('https://x.com/DigiWaveFix', '_blank')">X</button>
-                </div>
-                <div class="red">
-                    <img src="images/instagram-logo.png" alt="Instagram">
-                    <button class="btn-social" onclick="window.open('https://instagram.com )">Instagram</button>
-                </div>
-                <div class="red">
-                    <img src="images/logo-linkedin.png" alt="LinkedIn">
-                    <button class="btn-social" onclick="window.open(instagram.com)">LinkedIn</button>
-                </div>
-            </div>
-        </section>
-        
+    <!-- Sección "Nuestros Servicios" -->
+    <section id="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="service">
+            <h3><span></span> Auditoria de ciberseguridad</h3>
+            <p>Auditoria de ciberseguridad a empresas con informes detallados de todo lo recopilado.</p>
+            <a href="#" class="buy-btn" onclick="addToCart('Servicio Básico', 100)">Comprar</a>
+        </div>
+        <div class="service">
+            <h3><span>🚀</span> Optimizacion de forma remota</h3>
+            <p>Optimizamos tu equipo para que aumente su velocidad eliminando todo tipo de archivos basuras y optimizando con programas etc.</p>
+            <a href="#" class="buy-btn" onclick="addToCart('Servicio Avanzado', 200)">Comprar</a>
+        </div>
+        <div class="service">
+            <h3><span>🔥</span> Crear página web <span class="best-seller">Más comprado</span></h3>
+            <p>Crear página web con todos los detalles que el cliente proporcione con una tecnologia fascinante y que puede ser utilizada por tu empresa.</p>
+            <a href="#" class="buy-btn" onclick="addToCart('Servicio Premium', 300)">Comprar</a>
+        </div>
+    </section>
 
-    <style>
-            .btn-social {
-                background-color: #fff;
-                color: black; 
-                border: none;
-                padding: 10px 20px;
-                cursor: pointer;
-                font-size: 1rem;
-                border-radius: 25px;
-                margin-top: 10px;
-                transition: background-color 0.3s ease, transform 0.3s ease;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-        
-            .btn-social:hover {
-                background-color: #000;
-                transform: translateY(-3px) scale(1.05);
-            }
-        
-            .red {
-                text-align: center;
-                margin: 20px;
-            }
-        
-            .red img {
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                margin-bottom: 10px;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-        
-            .red img:hover {
-                transform: scale(1.2);
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            }
+    <!-- Sección "Patrocinadores" -->
+    <section id="sponsors">
+        <h2>Patrocinadores</h2>
+        <img src="ruta/al/logo1.png" class="sponsor-logo" alt="Patrocinador 1">
+        <img src="ruta/al/logo2.png" class="sponsor-logo" alt="Patrocinador 2">
+        <img src="ruta/al/logo3.png" class="sponsor-logo" alt="Patrocinador 3">
+    </section>
 
-            
-            #registerPopup {
-                z-index: 999;
-            }
-
-            #loginPopup {
-                z-index: 1000;
-            }
-        </style>
+    <!-- Sección del Cupón -->
+    <section id="coupon">
+        <h2>Aplica tu Cupón</h2>
+        <div class="coupon-section">
+            <input type="text" id="coupon-code" placeholder="Introduce tu cupón">
+            <button id="apply-coupon-btn">Aplicar Cupón</button>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2024 WaveFIX. Todos los derechos reservados.</p>
-        <div class="redes-sociales">
-            <a href="https://x.com/DigiWaveFix" target="_blank">X</a>
-            <a href="https://www.instagram.com/WaveFIX" target="_blank">Instagram</a>
-            <a href="https://www.linkedin.com/WaveFIX" target="_blank">LinkedIn</a>
-        </div>
-    </footer>
-
-    <div id="registerPopup" class="popup">
-        <span class="close" onclick="closePopup('registerPopup')">&times;</span>
-        <form id="registerForm" onsubmit="return submitRegister()">
-            <h2>Registrarse</h2>
-            <label for="regNombre">Nombre:</label>
-            <input type="text" id="regNombre" name="regNombre" required>
-            <label for="regEmail">Email:</label>
-            <input type="email" id="regEmail" name="regEmail" required>
-            <label for="regPassword">Contraseña:</label>
-            <input type="password" id="regPassword" name="regPassword" required>
-            <label for="regConfirmPassword">Confirmar Contraseña:</label>
-            <input type="password" id="regConfirmPassword" name="regConfirmPassword" required>
-            <button type="submit">Registrar</button>
-        </form>
-    </div>
-
-    <div id="loginPopup" class="popup">
-        <span class="close" onclick="closePopup('loginPopup')">&times;</span>
-        <form id="loginForm" onsubmit="return submitLogin()">
-            <h2>Iniciar Sesión</h2>
-            <label for="loginEmail">Email:</label>
-            <input type="email" id="loginEmail" name="loginEmail" required>
-            <label for="loginPassword">Contraseña:</label>
-            <input type="password" id="loginPassword" name="loginPassword" required>
-            <button type="submit">Iniciar Sesión</button>
-            <div class="login-options">
-                <button type="button" onclick="openRegister()">¿No tienes cuenta? Regístrate</button>
-                <button type="button" onclick="forgotPassword()">¿Olvidaste tu contraseña?</button>
+        <div class="social-coupon">
+            <div class="social-icons">
+                <a href="#"><img src="icon/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="icon/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="icon/instagram.png" alt="Instagram"></a>
             </div>
-        </form>
-    </div>
+            <div class="coupon-message">
+                <span>🏷️ Cupón de Descuento</span>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Contacto</h2>
+            <form id="contactForm">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+    
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <p>&copy; 2024 Todos los derechos reservados.</p>
+    </footer>
+    
 
-    <div id="cookiesPopup" class="popup">
-        <span class="close" onclick="closePopup('cookiesPopup')">&times;</span>
-        <div class="content">
-            <h2>Política de Cookies</h2>
-            <p>Este sitio web utiliza cookies para mejorar la experiencia del usuario. Al continuar navegando en este sitio, aceptas el uso de cookies.</p>
-            <button type="button" onclick="openPolicy()">Nuestra Política</button>
-            <button onclick="acceptCookies()">Aceptar</button>
+    <!-- Popup de Inicio de Sesión -->
+    <div id="login-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="login-form">
+                <label for="login-email">Correo Electrónico:</label>
+                <input type="email" id="login-email" name="login-email" required>
+
+                <label for="login-password">Contraseña:</label>
+                <input type="password" id="login-password" name="login-password" required>
+
+                <button type="submit">Iniciar Sesión</button>
+                <button type="button" id="register-btn">Registrarse</button>
+            </form>
         </div>
     </div>
 
-    <div id="policyPopup" class="popup">
-        <span class="close" onclick="closePopup('policyPopup')">&times;</span>
-        <div class="content">
-            <h2>Política de Privacidad</h2>
-            <p>En WaveFIX, valoramos tu privacidad. Todos los datos personales recopilados serán utilizados únicamente para mejorar la experiencia del usuario y no serán compartidos con terceros sin tu consentimiento.</p>
-            <button onclick="closePopup('policyPopup')">Cerrar</button>
+    <!-- Popup de Registro -->
+    <div id="register-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Registrarse</h2>
+            <form id="register-form">
+                <label for="register-email">Correo Electrónico:</label>
+                <input type="email" id="register-email" name="register-email" required>
+
+                <label for="register-password">Contraseña:</label>
+                <input type="password" id="register-password" name="register-password" required>
+
+                <button type="submit">Registrarse</button>
+            </form>
         </div>
     </div>
 
-    <script src="assets/app.js"></script>
-    <script>
-        
-        function showCookiesPopup() {
-            document.getElementById('cookiesPopup').style.display = 'block';
-        }
-    </script>
+    <!-- Popup de Validación de Cupón -->
+    <div id="coupon-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p id="coupon-message"></p>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="assets/script.js"></script>
 </body>
 </html>
