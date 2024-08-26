@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404 - Página no encontrada</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e60000;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        .error-container {
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .error-container h1 {
+            font-size: 8rem;
+            margin: 0;
+        }
+
+        .error-container p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .error-container a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            background-color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .error-container a:hover {
+            background-color: #fff;
+            color: #e60000;
+            transform: scale(1.1);
+        }
+
+        .face {
+            font-size: 5rem;
+            animation: dropIn 1s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes dropIn {
+            0% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="face">"(</div>
+        <h1>404</h1>
+        <p>Página no encontrada</p>
+        <a href="index.html">Volver al inicio</a>
+    </div>
+</body>
+</html>
