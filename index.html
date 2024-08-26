@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wavefix</title>
     <link rel="stylesheet" href="assets/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-
 
     <header>
         <div class="login-cart">
             <button id="login-btn">
                 <span>👤 Iniciar sesión</span>
-                </button>
-                </div>
-            </header>
-    
+            </button>
+        </div>
+    </header>
 
     <!-- Popup de Cookies -->
     <div id="cookies-popup" class="cookies-popup">
@@ -26,27 +25,22 @@
         </div>
     </div>
 
-
-    
-
     <!-- Banner de Descuento -->
     <div class="discount-banner">
-        ¡10% de descuento en todos los productos! <span>Oferta limitada</span>
+        ¡50% de descuento en todos los productos! <span>Oferta limitada</span>
     </div>
 
     <!-- Sección principal -->
     <section class="hero">
         <div class="hero-title">
-            <h2>Bienvenido a Wavefix empresa de ciberseguridad</h2>
+            <h2>Bienvenido a Wavefix, empresa de ciberseguridad</h2>
         </div>
     </section>
 
     <!-- Sección "Quiénes Somos" -->
     <section id="about">
         <h2>Quiénes Somos</h2>
-        <p>Somos una empresa dedicada a hacer auditorias de ciberseguridad prometer seguridad a equipos y webs de clientes
-            con informes detallados y privados a cada cliente tambien trabajamos como creadores de websites con todos los
-            detalles que el cliente nos proporcione, tambien optimizamos de forma remota equimos que esten limitados y los llevamos al siguiente nivel.
+        <p>Somos una empresa dedicada a realizar auditorías de ciberseguridad, garantizando la seguridad de equipos y sitios web de clientes con informes detallados y privados. También trabajamos como creadores de sitios web con todos los detalles que el cliente nos proporcione. Además, optimizamos de forma remota equipos que estén limitados y los llevamos al siguiente nivel.
         </p>
     </section>
 
@@ -54,25 +48,28 @@
     <section id="services">
         <h2>Nuestros Servicios</h2>
         <div class="service">
-            <h3><span></span> Auditoria de ciberseguridad</h3>
-            <p>Auditoria de ciberseguridad a empresas con informes detallados de todo lo recopilado.</p>
-            <a href="#" class="buy-btn" onclick="addToCart('Servicio Básico', 100)">Comprar</a>
+            <h3><span>🔒</span> Auditoría de ciberseguridad</h3>
+            <p>Realizamos auditorías de ciberseguridad a empresas con informes detallados de todo lo recopilado.</p>
+            <p><del>$70</del> <strong style="color: red;">$35</strong></p>
+            <a href="#" class="buy-btn" onclick="addToCart('auditoría', 35)">Comprar</a>
         </div>
         <div class="service">
-            <h3><span>🚀</span> Optimizacion de forma remota</h3>
-            <p>Optimizamos tu equipo para que aumente su velocidad eliminando todo tipo de archivos basuras y optimizando con programas etc.</p>
-            <a href="#" class="buy-btn" onclick="addToCart('Servicio Avanzado', 200)">Comprar</a>
+            <h3><span>🚀</span> Optimización de forma remota</h3>
+            <p>Optimizamos tu equipo para que aumente su velocidad, eliminando todo tipo de archivos basura y mejorando el rendimiento con programas especializados.</p>
+            <p><del>$30</del> <strong style="color: red;">$15</strong></p>
+            <a href="#" class="buy-btn" onclick="addToCart('optimización', 15)">Comprar</a>
         </div>
         <div class="service">
             <h3><span>🔥</span> Crear página web <span class="best-seller">Más comprado</span></h3>
-            <p>Crear página web con todos los detalles que el cliente proporcione con una tecnologia fascinante y que puede ser utilizada por tu empresa.</p>
-            <a href="#" class="buy-btn" onclick="addToCart('Servicio Premium', 300)">Comprar</a>
+            <p>Desarrollamos páginas web con todos los detalles que el cliente proporcione, utilizando tecnología moderna que potenciará tu negocio.</p>
+            <p><del>$100</del> <strong style="color: red;">$50</strong></p>
+            <a href="#" class="buy-btn" onclick="addToCart('web', 50)">Comprar</a>
         </div>
     </section>
 
-    <!-- Sección "Patrocinadores" -->
+    <!-- Sección "Clientes" -->
     <section id="sponsors">
-        <h2>Clientes</h2>
+        <h2>Clientes:</h2>
         <img src="images/logo-6-color.png" class="sponsor-logo" alt="Cliente 1">
         <img src="images/logo-2-color.png" class="sponsor-logo" alt="Cliente 2">
         <img src="images/logo-3-color.png" class="sponsor-logo" alt="Cliente 3">
@@ -89,11 +86,10 @@
     <footer>
         <div class="social-coupon">
             <div class="social-icons">
-                <a href="#"><img src="images/facebookLogo.png" alt=""></a>
-                <a href="#"><img src="images/x.svg" alt=""></a>
-                <a href="#"><img src="images/instagram.svg" alt=""></a>
+                <a href="#"><img src="images/facebookLogo.png" alt="Facebook"></a>
+                <a href="#"><img src="images/x.svg" alt="X"></a>
+                <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
             </div>
-            
         </div>
         <div class="contact-form">
             <h2>Contacto</h2>
@@ -112,7 +108,6 @@
         </div>
         <p>&copy; 2024 Todos los derechos reservados.</p>
     </footer>
-    
 
     <!-- Popup de Inicio de Sesión -->
     <div id="login-popup" class="popup">
@@ -158,33 +153,31 @@
     </div>
 
     <!-- Script -->
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Redireccionar a la página 404 solo si ocurre un error que no es manejado
-        window.addEventListener('error', function(event) {
-           
-                return; // Si no es un recurso, no redirige a 404
-            }
-            
-            // Evita la redirección inmediata en caso de error en la consola o en algún script de terceros
-            if (event.message) {
-                return; // Si es un error de JavaScript que no afecta la carga de recursos, no redirige
-            }
-
-            event.preventDefault();
-            window.location.href = '404.html';
-        }, true);
-
-            }
-        });
-    });
-</script>
-
-
-    
     <script src="assets/script.js"></script>
+    <script>
+        // Enviar formulario de contacto a un correo electrónico usando EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function() {
+                    alert('El mensaje se ha enviado correctamente');
+                }, function(error) {
+                    alert('Hubo un error al enviar el mensaje: ' + JSON.stringify(error));
+                });
+        });
+
+        // Agregar animaciones a los servicios
+        const services = document.querySelectorAll('.service');
+        services.forEach(service => {
+            service.style.transition = "transform 0.3s ease";
+            service.addEventListener('mouseenter', () => {
+                service.style.transform = "scale(1.05)";
+            });
+            service.addEventListener('mouseleave', () => {
+                service.style.transform = "scale(1)";
+            });
+        });
+    </script>
 
 </body>
 </html>
