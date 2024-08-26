@@ -161,22 +161,33 @@
 
 
 <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Redireccionar a la página 404 si se intenta acceder a una ruta inexistente
-            window.addEventListener('error', function(event) {
-                event.preventDefault();
-                window.location.href = '404.html';
-            });
+    document.addEventListener("DOMContentLoaded", function() {
+        // Redireccionar a la página 404 solo si ocurre un error que no es manejado
+        window.addEventListener('error', function(event) {
+            // Verifica si el error es de un recurso faltante (como una imagen)
+            if (event.target.tagName !== 'IMG' && event.target.tagName !== 'SCRIPT' && event.target.tagName !== 'LINK') {
+                return; // Si no es un recurso, no redirige a 404
+            }
+            
+            // Evita la redirección inmediata en caso de error en la consola o en algún script de terceros
+            if (event.message) {
+                return; // Si es un error de JavaScript que no afecta la carga de recursos, no redirige
+            }
 
-            // Redireccionar a 404 si una imagen no se carga
-            const images = document.querySelectorAll('img');
-            images.forEach((img) => {
-                img.onerror = function() {
-                    window.location.href = '404.html';
-                }
-            });
+            event.preventDefault();
+            window.location.href = '404.html';
+        }, true);
+
+        // Redireccionar a 404 si una imagen no se carga correctamente
+        const images = document.querySelectorAll('img');
+        images.forEach((img) => {
+            img.onerror = function() {
+                window.location.href = '404.html';
+            }
         });
-    </script>
+    });
+</script>
+
 
     
     <script src="assets/script.js"></script>
