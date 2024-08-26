@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Wavefix</title>
+    <link rel="icon" href="https://img.icons8.com/fluency/48/000000/money.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=San+Francisco&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'San Francisco', sans-serif;
+            background: linear-gradient(to bottom right, #b30000, #800000);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        /* Partículas de fondo */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(#ff4d4d 15%, transparent 20%) center center / 5px 5px;
+            animation: moveBackground 30s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes moveBackground {
+            from { transform: translate(0, 0); }
+            to { transform: translate(-100%, -100%); }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 90%;
+            max-width: 450px;
+            animation: scaleUp 0.8s ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.8) rotateY(90deg);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) rotateY(0deg);
+                opacity: 1;
+            }
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 15px;
+            border-radius: 50%;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(0, 0, 0, 0.5);
+            transform: scale(1.1) rotate(-10deg);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .payment-options {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .payment-option {
+            border: 2px solid white;
+            padding: 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+            backface-visibility: hidden;
+        }
+
+        .payment-option:hover {
+            transform: scale(1.2) rotateY(10deg);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .payment-option.active {
+            background-color: white;
+            color: red;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .payment-option i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+            animation: pop 0.3s ease-in-out;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .payment-form {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        input[type="text"], input[type="email"], input[type="number"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+            background-color: #ff9999;
+            outline: none;
+            transform: scale(1.05);
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background-color: white;
+            color: red;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #f8f8f8;
+            transform: scale(1.05);
+        }
+
+        .product-summary {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Animación de carga */
+        .loading {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Mensaje de confirmación */
+        .confirmation-message {
+            display: none;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: lightgreen;
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="#" class="back-button"><i class="fas fa-arrow-left"></i></a>
+
+    <div class="container">
+        <h1>Pago Seguro</h1>
+        <div class="payment-options">
+            <div id="paypal" class="payment-option" onclick="selectOption('paypal')">
+                <i class="fab fa-paypal"></i>
+                <p>PayPal</p>
+            </div>
+            <div id="bizum" class="payment-option" onclick="selectOption('bizum')">
+                <i class="fas fa-mobile-alt"></i>
+                <p>Bizum</p>
+            </div>
+            <div id="credit-card" class="payment-option" onclick="selectOption('credit-card')">
+                <i class="fas fa-credit-card"></i>
+                <p>Tarjeta</p>
+            </div>
+        </div>
+
+        <div id="credit-card-form" class="payment-form">
+            <form id="payment-form" action="#" method="post">
+                <input type="text" placeholder="Nombre en la tarjeta" required>
+                <input type="number" placeholder="Número de tarjeta" required>
+                <input type="text" placeholder="MM/AA" required>
+                <input type="number" placeholder="CVC" required>
+                <div class="product-summary" id="product-summary">
+                    <!-- Personaliza el producto aquí -->
+                    <p>Producto: Ejemplo Avanzado</p>
+                    <p>Precio: $199.99</p>
+                </div>
+                <input type="submit" value="Pagar">
+            </form>
+            <div class="loading" id="loading"></div>
+            <p class="confirmation-message" id="confirmation-message">¡Pago realizado con éxito!</p>
+        </div>
+    </div>
+
+    <script>
+        function selectOption(option) {
+            document.querySelectorAll('.payment-option').forEach(function(element) {
+                element.classList.remove('active');
+            });
+            document.getElementById(option).classList.add('active');
+            
+            document.querySelectorAll('.payment-form').forEach(function(element) {
+                element.style.display = 'none';
+            });
+
+            if (option === 'paypal') {
+                window.location.href = 'https://www.paypal.com/';
+            } else if (option === 'bizum') {
+                window.location.href = 'https://bizum.es/';
+            } else if (option === 'credit-card') {
+                document.getElementById('credit-card-form').style.display = 'block';
+                document.getElementById('product-summary').style.display = 'block';
+            }
+        }
+
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('loading').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('confirmation-message').style.display = 'block';
+            }, 2000);
+        });
+    </script>
+
+</body>
+</html>
