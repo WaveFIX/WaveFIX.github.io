@@ -164,8 +164,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         // Redireccionar a la página 404 solo si ocurre un error que no es manejado
         window.addEventListener('error', function(event) {
-            // Verifica si el error es de un recurso faltante (como una imagen)
-            if (event.target.tagName !== 'IMG' && event.target.tagName !== 'SCRIPT' && event.target.tagName !== 'LINK') {
+           
                 return; // Si no es un recurso, no redirige a 404
             }
             
@@ -178,11 +177,6 @@
             window.location.href = '404.html';
         }, true);
 
-        // Redireccionar a 404 si una imagen no se carga correctamente
-        const images = document.querySelectorAll('img');
-        images.forEach((img) => {
-            img.onerror = function() {
-                window.location.href = '404.html';
             }
         });
     });
