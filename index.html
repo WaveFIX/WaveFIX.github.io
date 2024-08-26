@@ -158,6 +158,28 @@
     </div>
 
     <!-- Script -->
+
+
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Redireccionar a la página 404 si se intenta acceder a una ruta inexistente
+            window.addEventListener('error', function(event) {
+                event.preventDefault();
+                window.location.href = '404.html';
+            });
+
+            // Redireccionar a 404 si una imagen no se carga
+            const images = document.querySelectorAll('img');
+            images.forEach((img) => {
+                img.onerror = function() {
+                    window.location.href = '404.html';
+                }
+            });
+        });
+    </script>
+
+    
     <script src="assets/script.js"></script>
+
 </body>
 </html>
