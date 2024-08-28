@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+    // Popup de Cookies
     const cookiesPopup = document.getElementById('cookies-popup');
     const acceptCookiesBtn = document.getElementById('accept-cookies');
     acceptCookiesBtn.addEventListener('click', () => {
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cookiesPopup.style.display = 'block';
     }
 
-    
+   
     const loginPopup = document.getElementById('login-popup');
     const registerPopup = document.getElementById('register-popup');
     const loginBtn = document.getElementById('login-btn');
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 
-    // Animaciones para el contenido emergente (popup)
+    
     const popups = document.querySelectorAll('.popup-content');
     popups.forEach(popup => {
         popup.style.transition = "transform 0.3s ease";
@@ -109,14 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Código adicional para cerrar los popups
+    
     document.querySelectorAll('.close').forEach(closeButton => {
         closeButton.addEventListener('click', function() {
             this.closest('.popup').style.display = 'none';
         });
     });
 
-    // Mostrar el popup de registro cuando se hace clic en el botón de registro
+    
     document.getElementById('register-btn').addEventListener('click', function() {
         document.getElementById('register-popup').style.display = 'block';
     });
