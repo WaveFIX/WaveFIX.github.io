@@ -93,11 +93,55 @@ document.addEventListener('DOMContentLoaded', () => {
         couponPopup.style.display = 'none';
     });
 
-    // Formulario de Contacto
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        alert('Formulario enviado con éxito');
-        contactForm.reset();
+    
+
+    
+
+    // Animaciones para el contenido emergente (popup)
+    const popups = document.querySelectorAll('.popup-content');
+    popups.forEach(popup => {
+        popup.style.transition = "transform 0.3s ease";
+        popup.addEventListener('mouseenter', () => {
+            popup.style.transform = "scale(1.05)";
+        });
+        popup.addEventListener('mouseleave', () => {
+            popup.style.transform = "scale(1)";
+        });
+    });
+
+    // Código adicional para cerrar los popups
+    document.querySelectorAll('.close').forEach(closeButton => {
+        closeButton.addEventListener('click', function() {
+            this.closest('.popup').style.display = 'none';
+        });
+    });
+
+    // Mostrar el popup de registro cuando se hace clic en el botón de registro
+    document.getElementById('register-btn').addEventListener('click', function() {
+        document.getElementById('register-popup').style.display = 'block';
+    });
+});
+
+
+
+
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_csrl5ge';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('El formulario a sido enviado, espera tu respuesta al mismo correo');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
     });
 });
