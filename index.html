@@ -17,14 +17,43 @@
 <body>
 
     <header>
-        <div class="login-cart">
-            <button id="login-btn">
-                <span>👤 Iniciar sesión</span>
-            </button>
-        </div>
-    </header>
+    <div class="login-cart">
+        <button id="login-btn">
+            <span>👤 Iniciar sesión</span>
+        </button>
+    </div>
+</header>
 
-    <!-- Popup de Cookies -->
+<style>
+.login-cart {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#login-btn {
+    background-color: #ff0000; /* Color rojo */
+    color: white;
+    border: none;
+    border-radius: 12px; 
+    padding: 8px 12px; 
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+#login-btn:hover {
+    background-color: #cc0000; /* Cambio de color al pasar el cursor */
+    transform: scale(1.05); 
+}
+
+#login-btn span {
+    margin-left: 5px;
+}
+</style>
+
+
+   
     <div id="cookies-popup" class="cookies-popup">
         <div class="cookies-popup-content">
             <p>Este sitio web utiliza cookies para mejorar tu experiencia. <button id="accept-cookies">Aceptar</button></p>
@@ -43,14 +72,14 @@
         </div>
     </section>
 
-    <!-- Sección "Quiénes Somos" -->
+    
     <section id="about">
         <h2>Quiénes Somos</h2>
         <p>Somos una empresa dedicada a realizar auditorías de ciberseguridad, garantizando la seguridad de equipos y sitios web de clientes con informes detallados y privados. También trabajamos como creadores de sitios web con todos los detalles que el cliente nos proporcione. Además, optimizamos de forma remota equipos que estén limitados y los llevamos al siguiente nivel.
         </p>
     </section>
 
-    <!-- Sección "Nuestros Servicios" -->
+   
     <section id="services">
         <h2>Nuestros Servicios</h2>
         <div class="service">
@@ -136,7 +165,7 @@
         </div>
     </div>
     
-    <!-- Popup de Registro -->
+   
     <div id="register-popup" class="popup">
         <div class="popup-content">
             <span class="close">&times;</span>
@@ -154,7 +183,7 @@
     </div>
     
 
-    <!-- Popup de Validación de Cupón -->
+   
     <div id="coupon-popup" class="popup">
         <div class="popup-content">
             <span class="close">&times;</span>
@@ -162,7 +191,7 @@
         </div>
     </div>
 
-    <!-- Script -->
+   
     <script src="assets/script.js"></script>
     
 
