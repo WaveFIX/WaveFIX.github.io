@@ -154,30 +154,9 @@
 
     <!-- Script -->
     <script src="assets/script.js"></script>
-    <script>
-        // Enviar formulario de contacto a un correo electrónico usando EmailJS
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            emailjs.sendForm('service_7eppl5t', 'template_csrl5ge', this)
-                .then(function() {
-                    alert('El mensaje se ha enviado correctamente');
-                }, function(error) {
-                    alert('Hubo un error al enviar el mensaje: ' + JSON.stringify(error));
-                });
-        });
+   
+    
 
-        // Agregar animaciones a los servicios
-        const services = document.querySelectorAll('.service');
-        services.forEach(service => {
-            service.style.transition = "transform 0.3s ease";
-            service.addEventListener('mouseenter', () => {
-                service.style.transform = "scale(1.05)";
-            });
-            service.addEventListener('mouseleave', () => {
-                service.style.transform = "scale(1)";
-            });
-        });
-    </script>
 
 </body>
 </html>
