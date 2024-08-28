@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Popup de Cookies
+    
     const cookiesPopup = document.getElementById('cookies-popup');
     const acceptCookiesBtn = document.getElementById('accept-cookies');
     acceptCookiesBtn.addEventListener('click', () => {
-        cookiesPopup.style.display = 'none';
+        cookiesPopup.style.display = 'block';
         localStorage.setItem('cookiesAccepted', 'true');
     });
 
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cookiesPopup.style.display = 'block';
     }
 
-    // Popups de Inicio de Sesión y Registro
+    
     const loginPopup = document.getElementById('login-popup');
     const registerPopup = document.getElementById('register-popup');
     const loginBtn = document.getElementById('login-btn');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Carrito de Compras
+    
     const cartMenu = document.getElementById('cart-menu');
     const cartBtn = document.getElementById('cart-btn');
     const closeCartBtn = document.querySelector('.close-cart');
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Validación de Cupón
+    
     const applyCouponBtn = document.getElementById('apply-coupon-btn');
     const couponPopup = document.getElementById('coupon-popup');
     const couponMessage = document.getElementById('coupon-message');
