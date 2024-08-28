@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cookiesPopup = document.getElementById('cookies-popup');
     const acceptCookiesBtn = document.getElementById('accept-cookies');
     acceptCookiesBtn.addEventListener('click', () => {
-        cookiesPopup.style.display = 'block';
+        cookiesPopup.style.display = 'none';
         localStorage.setItem('cookiesAccepted', 'true');
     });
 
