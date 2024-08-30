@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wavefix</title>
+    <title>Wavefix - Servicios de Ciberseguridad y Desarrollo Web</title> 
+    <meta name="description" content="Wavefix ofrece auditorías de ciberseguridad, optimización remota de equipos y desarrollo de sitios web. Contáctanos para proteger y potenciar tu negocio."> 
     <link rel="stylesheet" href="assets/style.css">
-    <!-- Favicon -->
+    
     <link rel="icon" href="images/ico.ico" type="image/x-icon">
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  
-  <script type="text/javascript">
-    emailjs.init('BydpCTTcxGPh9FJ6L')
-  </script>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('BydpCTTcxGPh9FJ6L');
+    </script>
 </head>
+
 <body>
 
     <header>
-    <div class="login-cart">
-        <button id="login-btn">
-            <span>👤 Iniciar sesión</span>
-        </button>
-    </div>
-</header>
+        <div class="login-cart">
+            <button id="login-btn">
+                <span>👤 Iniciar sesión</span>
+            </button>
+        </div>
+    </header>
 
-<style>
-.login-cart {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
+    <style>
+        .login-cart {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
 
-#login-btn {
-    background-color: #ff0000; /* Color rojo */
-    color: white;
-    border: none;
-    border-radius: 12px; 
-    padding: 8px 12px; 
-    font-size: 14px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease; 
-}
+        #login-btn {
+            background-color: #ff0000; /* Color rojo */
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
 
-#login-btn:hover {
-    background-color: #cc0000; /* Cambio de color al pasar el cursor */
-    transform: scale(1.05); 
-}
+        #login-btn:hover {
+            background-color: #cc0000; /* Cambio de color al pasar el cursor */
+            transform: scale(1.05);
+        }
 
-#login-btn span {
-    margin-left: 5px;
-}
-</style>
+        #login-btn span {
+            margin-left: 5px;
+        }
+    </style>
 
-
-   
+    
     <div id="cookies-popup" class="cookies-popup">
         <div class="cookies-popup-content">
             <p>Este sitio web utiliza cookies para mejorar tu experiencia. <button id="accept-cookies">Aceptar</button></p>
@@ -62,41 +63,40 @@
 
     <!-- Banner de Descuento -->
     <div class="discount-banner">
-        Presupuestos para nuestros productos con descuento!! <span>Oferta limitada</span>
+        ¡Presupuestos para nuestros productos con descuento! <span>Oferta limitada</span> <!-- Corregido para coherencia gramatical -->
     </div>
 
     <!-- Sección principal -->
     <section class="hero">
         <div class="hero-title">
-            <h2>Bienvenido a Wavefix, empresa de ciberseguridad</h2>
+            <h1>Bienvenido a Wavefix, expertos en ciberseguridad</h1> <!-- Cambio de H2 a H1 para mejorar el SEO -->
         </div>
     </section>
 
-    
+   
     <section id="about">
         <h2>Quiénes Somos</h2>
-        <p>Somos una empresa dedicada a realizar auditorías de ciberseguridad, garantizando la seguridad de equipos y sitios web de clientes con informes detallados y privados. También trabajamos como creadores de sitios web con todos los detalles que el cliente nos proporcione. Además, optimizamos de forma remota equipos que estén limitados y los llevamos al siguiente nivel.
-        </p>
+        <p>Somos una empresa especializada en auditorías de ciberseguridad, garantizando la protección de equipos y sitios web de nuestros clientes mediante informes detallados y confidenciales. Además, ofrecemos servicios de desarrollo web personalizados y optimización remota de equipos para maximizar su rendimiento.</p> <!-- Mejora gramatical y de SEO -->
     </section>
 
-   
+    
     <section id="services">
         <h2>Nuestros Servicios</h2>
         <div class="service">
-            <h3><span>🔒</span> Auditoría de ciberseguridad</h3>
-            <p>Realizamos auditorías de ciberseguridad a empresas con informes detallados de todo lo recopilado.</p>
+            <h3><span>🔒</span> Auditoría de Ciberseguridad</h3>
+            <p>Realizamos auditorías de ciberseguridad a empresas, proporcionando informes detallados de los hallazgos y recomendaciones.</p>
             <p><del>Desde $70</del> <strong style="color: red;">Desde $35</strong></p>
             <a href="pago.html" class="buy-btn" onclick="addToCart('auditoría', 35)">Comprar</a>
         </div>
         <div class="service">
-            <h3><span>🚀</span> Optimización de forma remota</h3>
-            <p>Optimizamos tu equipo para que aumente su velocidad, eliminando todo tipo de archivos basura y mejorando el rendimiento con programas especializados.</p>
+            <h3><span>🚀</span> Optimización Remota</h3>
+            <p>Optimizamos tu equipo de manera remota, eliminando archivos innecesarios y mejorando el rendimiento con herramientas especializadas.</p>
             <p><del>Desde $30</del> <strong style="color: red;">Desde $15</strong></p>
             <a href="pago.html" class="buy-btn" onclick="addToCart('optimización', 15)">Comprar</a>
         </div>
         <div class="service">
-            <h3><span>🔥</span> Crear página web <span class="best-seller">Más comprado</span></h3>
-            <p>Desarrollamos páginas web con todos los detalles que el cliente proporcione, utilizando tecnología moderna que potenciará tu negocio.</p>
+            <h3><span>🔥</span> Desarrollo de Páginas Web <span class="best-seller">Más Popular</span></h3> <!-- Traducción de "Más comprado" para mayor claridad -->
+            <p>Desarrollamos páginas web a medida, utilizando las tecnologías más avanzadas para potenciar tu negocio.</p>
             <p><del>Desde $100</del> <strong style="color: red;">Desde $50</strong></p>
             <a href="pago.html" class="buy-btn" onclick="addToCart('web', 50)">Comprar</a>
         </div>
@@ -104,12 +104,13 @@
 
     <!-- Sección "Clientes" -->
     <section id="sponsors">
-        <h2>Clientes:</h2>
+        <h2>Clientes Satisfechos</h2> 
         <img src="images/logo-6-color.png" class="sponsor-logo" alt="Cliente 1">
         <img src="images/logo-2-color.png" class="sponsor-logo" alt="Cliente 2">
         <img src="images/logo-3-color.png" class="sponsor-logo" alt="Cliente 3">
     </section>
 
+    
     <section id="coupon">
         <h2>🏷️ Cupón de Descuento</h2>
         <div class="coupon-section">
@@ -118,36 +119,37 @@
         </div>
     </section>
 
+    
     <footer>
         <div class="social-coupon">
             <div class="social-icons">
                 <a href="#"><img src="images/facebookLogo.png" alt="Facebook"></a>
-                <a href="#"><img src="images/x.svg" alt="X"></a>
+                <a href="#"><img src="images/x.svg" alt="X (Twitter)"></a> <!-- Especificación del nombre de la red social para SEO -->
                 <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
             </div>
         </div>
         <div class="contact-form">
-            <h2>Contacto</h2>
+            <h2>Contáctanos</h2>
             <form id="form">
                 <div class="field">
-                <label for="to_name">Nombre</label>
-              <input type="text" name="to_name" id="to_name">
-               </div>
-                  <div class="field">
-                  <label for="email_id">Correo Electronico</label>
-                  <input type="email" name="email_id" id="email_id">
+                    <label for="to_name">Nombre</label>
+                    <input type="text" name="to_name" id="to_name" placeholder="Tu nombre" required> <!-- Añadido "placeholder" y "required" para mejorar la experiencia del usuario -->
                 </div>
                 <div class="field">
-                  <label for="message">Mensaje/Asunto</label>
-                  <input type="text" name="message" id="message">
+                    <label for="email_id">Correo Electrónico</label>
+                    <input type="email" name="email_id" id="email_id" placeholder="Tu correo electrónico" required>
                 </div>
-              
-                <input type="submit" id="button" value="Enviar" >
-              </form>
+                <div class="field">
+                    <label for="message">Mensaje o Asunto</label>
+                    <input type="text" name="message" id="message" placeholder="Escribe tu mensaje" required>
+                </div>
+                <input type="submit" id="button" value="Enviar">
+            </form>
         </div>
-        <p>&copy; 2024 Todos los derechos reservados.</p>
+        <p>&copy; 2024 Wavefix. Todos los derechos reservados.</p> <!-- Añadido nombre de la empresa para SEO -->
     </footer>
 
+    
     <div id="login-popup" class="popup">
         <div class="popup-content">
             <span class="close">&times;</span>
@@ -155,17 +157,15 @@
             <form id="login-form">
                 <label for="login-email">Correo Electrónico:</label>
                 <input type="email" id="login-email" name="login-email" required>
-    
                 <label for="login-password">Contraseña:</label>
                 <input type="password" id="login-password" name="login-password" required>
-    
                 <button type="submit">Iniciar Sesión</button>
                 <button type="button" id="register-btn">Registrarse</button>
             </form>
         </div>
     </div>
+
     
-   
     <div id="register-popup" class="popup">
         <div class="popup-content">
             <span class="close">&times;</span>
@@ -173,17 +173,14 @@
             <form id="register-form">
                 <label for="register-email">Correo Electrónico:</label>
                 <input type="email" id="register-email" name="register-email" required>
-    
                 <label for="register-password">Contraseña:</label>
                 <input type="password" id="register-password" name="register-password" required>
-    
                 <button type="submit">Registrarse</button>
             </form>
         </div>
     </div>
-    
 
-   
+    <!-- Ventana Modal de Cupón -->
     <div id="coupon-popup" class="popup">
         <div class="popup-content">
             <span class="close">&times;</span>
@@ -191,24 +188,29 @@
         </div>
     </div>
 
-   
-    <script src="assets/script.js"></script>
     
+    <script src="assets/script.js"></script>
 
-   
-<script type="text/javascript">
-  (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '66ccdff663572186aeab80a2' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production'
-        });
-      }
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
-</script>
+    
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+                window.voiceflow.chat.load({
+                    verify: {
+                        projectID: '66ccdff663572186aeab80a2'
+                    },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                });
+            };
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+            v.type = "text/javascript";
+            s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
 
 </body>
+
 </html>
